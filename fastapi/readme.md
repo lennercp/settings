@@ -1,12 +1,12 @@
-#Imports
+# Imports
 
-###com autenticação
+### com autenticação
 ```zsh
   pip install fastapi uvicorn sqlalchemy asyncpg psycopg2-binary gunicorn python-jose[cryptography] python-multipart bcrypt pytz passlib
 ```
 
-#Core
-##Settings
+# Core
+## Settings
 ```py
   from typing import List
   from pydantic import BaseSettings
@@ -28,7 +28,7 @@
   settings: Settings = Settings()
 ```
 
-##database
+## database
 ```py
   from sqlalchemy.orm import sessionmaker
   from sqlalchemy.ext.asyncio import create_async_engine, AsyncEngine, AsyncSession
@@ -46,7 +46,7 @@
   )
 ```
 
-##deps
+## deps
 ```py
 from typing import Generator
 from fastapi import Depends, HTTPException, status
@@ -111,7 +111,7 @@ async def get_current_user(
         return usuario
 ```
 
-##security
+## security
 ```py
   from passlib.context import CryptContext
 
@@ -124,7 +124,7 @@ async def get_current_user(
       return CRIPTO.hash(senha)
 ```
 
-##auth
+## auth
 ```py
   from typing import List
 
@@ -185,7 +185,7 @@ async def get_current_user(
       )
 ```
 
-#Criar tabelas
+# Criar tabelas
 ```py
   from core.configs import settings
   from core.database import engine
@@ -205,9 +205,9 @@ async def get_current_user(
       asyncio.run(create_tables())
 ```
 
-#Endpoints usuário
+# Endpoints usuário
 
-###logado
+### logado
 ```py
   # GET LOGADO
   @router.get('/logado', response_model=UsuarioSchemaBase)
@@ -215,7 +215,7 @@ async def get_current_user(
       return usuario_logado
 ```
 
-###cadastrar
+### cadastrar
 ```py
   # POST / SIGNUP
   @router.post('/signup', status_code=status.HTTP_201_CREATED, response_model=UsuarioSchemaBase)
@@ -237,7 +237,7 @@ async def get_current_user(
               raise HTTPException(status_code=status.HTTP_406_NOT_ACCEPTABLE, detail="Já existe um usuario com este email cadastradado")
 ```
 
-###Ver todos os usuarios
+### Ver todos os usuarios
 ```py
   # GET Usuarios
   @router.get('/', status_code=status.HTTP_200_OK, response_model=List[UsuarioSchemaBase])
@@ -250,7 +250,7 @@ async def get_current_user(
           return usuarios
 ```
 
-###Ver um usuario
+### Ver um usuario
 ```py
   # GET USUARIO         
   @router.get('/{usuario_id}', status_code=status.HTTP_200_OK, response_model=UsuarioSchemaArtigos)
@@ -266,7 +266,7 @@ async def get_current_user(
           return usuario
 ```
 
-###fazer login
+### fazer login
 ```py
   # POST LOGIN
   @router.post('/login')
