@@ -1,2 +1,1 @@
-#Settings para novos projetos
-
+# Settings para novos projetos
