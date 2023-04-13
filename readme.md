@@ -1,0 +1,2 @@
+#Settings para novos projetos
+
