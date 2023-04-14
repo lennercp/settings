@@ -13,7 +13,7 @@
 
 ## install prettier
 ```zsh
-  npm i -D prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-react eslint
+  npm i -D prettier @babel/eslint-parser eslint eslint-plugin-prettier eslint-config-prettier eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 ## .eslintrc.js
@@ -24,6 +24,12 @@
     es2021: true,
     jest: true,
   },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -46,6 +52,7 @@
     'react/react-in-jsx-scope': 'off',
   },
 };
+
 ```
 
 ## .prettierrc.js
@@ -71,9 +78,15 @@ module.exports = {
 };
 ```
 
-## .babelrc.json
-```json
+## babel.config.js
+```js
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react"]
+  module.exports = {
+  presets: [
+    '@babel/preset-env',
+    ['@babel/preset-react', { runtime: 'automatic' }],
+  ],
+};
+
 }
 ```
