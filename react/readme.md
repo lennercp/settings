@@ -13,7 +13,7 @@
 
 ## install prettier
 ```zsh
-  npm i -D prettier @babel/eslint-parser eslint eslint-plugin-prettier eslint-config-prettier eslint-plugin-react eslint-plugin-react-hooks
+  npm i -D prettier @babel/eslint-parser @babel/preset-react @babel/env eslint eslint-plugin-prettier eslint-config-prettier eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 ## .eslintrc.js
@@ -90,3 +90,6 @@ module.exports = {
 
 }
 ```
+
+## package.json
+#### Retirar o "type": "modules"
