@@ -1,3 +1,7 @@
+[eslint](#eslintrcjs)
+[prettier](#prettierrcjs)
+[babel](#babelrcjson)
+
 # Install
 
 ## Create react app
