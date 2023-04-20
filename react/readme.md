@@ -17,13 +17,13 @@
 ## install
 
 ```zsh
-  npm i styled-components
+ npm i styled-components
 ```
 
 ## install dev dependencies
 
 ```zsh
-  npm i -D prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-react jest-styled-components
+  npm i -D prettier @babel/eslint-parser @babel/preset-react @babel/env eslint eslint-plugin-prettier eslint-config-prettier eslint-plugin-react eslint-plugin-react-hooks jest-styled-components
 ```
 
 ## .eslintrc.js
@@ -35,6 +35,12 @@ module.exports = {
     es2021: true,
     jest: true,
   },
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
+  ],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly",
@@ -87,6 +93,16 @@ module.exports = {
 
 ```json
 {
-  "presets": ["@babel/preset-env", "@babel/preset-react"]
+  module.exports = {
+  presets: [
+    '@babel/preset-env',
+    ['@babel/preset-react', { runtime: 'automatic' }],
+  ],
+};
+
 }
 ```
+
+## package.json
+
+#### Retirar o "type": "modules"
