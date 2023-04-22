@@ -1,6 +1,7 @@
 [eslint](#eslintrcjs)
 [prettier](#prettierrcjs)
 [babel](#babelrcjson)
+[package.json](#packagejson)
 
 # Install
 
