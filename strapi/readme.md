@@ -1,4 +1,4 @@
-[Elephantsql](#elephantsql)
+[Elephantsql](#elephant-sql)
 [Cloudinary](#cloudinary)
 
 ## Criar um novo app
