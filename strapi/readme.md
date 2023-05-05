@@ -9,24 +9,24 @@
 
 ## Elephant SQL
 
-**database name** é o **User & Default database** <br>
-**host** é o **tuffi.db.elephantsql.com**<br>
+**database name** é o <u>User & Default database</u> <br>
+**host** é o <u>tuffi.db.elephantsql.com</u><br>
 **port** é 5432<br>
-**username** é o **User & Default database**<br>
-**password** é **password**<br>
+**username** é o <u>User & Default database</u><br>
+**password** é <u>password</u><br>
 **enable SSL connection** y
 
-#### Abrir a pasta e ir em config/database.ts e mudar no **pool** do postgres para ser de 0 a 5 connection
+### Abrir a pasta e ir em config/database.ts e mudar no **pool** do postgres para ser de 0 a 5 connection
 
 ## Cloudinary
 
-#### Install
+### Install
 
 ```zsh
   npm install @strapi/provider-upload-cloudinary --save
 ```
 
-#### Create config/plugins.ts
+### Create config/plugins.ts
 
 ```ts
 module.exports = ({ env }) => ({
@@ -49,7 +49,7 @@ module.exports = ({ env }) => ({
 });
 ```
 
-#### No .env
+### No .env
 
 ```env
 CLOUDINARY_NAME = cloudinary-name
@@ -57,7 +57,7 @@ CLOUDINARY_KEY = cloudinary-key
 CLOUDINARY_SECRET = cloudinary-secret
 ```
 
-#### em config/middlewares.ts
+### em config/middlewares.ts
 
 ```ts
 {
