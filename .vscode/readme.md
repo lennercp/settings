@@ -52,6 +52,8 @@
 ## settings
 ```json
     {
+    "code-runner.ignoreSelection": true,
+    "code-runner.runInTerminal": true,
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.activeIconPack": "nest",
     "[prisma]": {
